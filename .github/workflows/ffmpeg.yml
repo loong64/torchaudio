@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ffmpeg_version: ["4.4.4", "5.0.3", "6.0"]
+        ffmpeg_version: ["4.4.4", "5.1.4", "6.1.1", "master"]
     
     steps:
       - name: Checkout
@@ -32,7 +32,7 @@ jobs:
       - name: Build ffmpeg
         run: |
           rm -f build.sh
-          wget -q https://github.com/mthrok/audio/raw/refs/heads/main/.github/scripts/ffmpeg/build.sh
+          wget -q https://github.com/pytorch/audio/raw/refs/heads/release/2.9/.github/scripts/ffmpeg/build.sh
           sudo chmod +x build.sh
 
           docker run --rm \
